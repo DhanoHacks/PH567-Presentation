@@ -52,7 +52,9 @@
 	\frametitle{What is Universality?}
 	
 	\begin{itemize}
-        \item Universality is the observation that there are properties for a large class of systems that are independent of the dynamical details of the system
+        \item Universality is the observation that there are properties for a large class of systems that are independent of the dynamical details of the system \pause
+        \item All gases behave similarly at high temperature and low pressure regardless of the type of molecule \pause
+        \item Critical exponents show universality in wide range of systems, including ferro-magnets, fluids, superconductors
     \end{itemize}
 
 \end{frame}
@@ -220,5 +222,154 @@
 \end{frame}
 
 %------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Bifurcation Plot}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]{logistic_bifurcation_diagram.png}
+    \end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Lyapunov Exponent Plot}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]{logistic_lyapunov_exp.png}
+    \end{figure}
+\end{frame}
+
+%-------------------------------------------------
+
+\begin{frame}
+        \frametitle{Logistic Map: Calculation of Feigenbaum Constant $\delta$}
+        Bifurcation points: $x^* = 3, 3.449, 3.544, \dots$ \pause
+        \begin{align*}
+            \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
+            \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.751 \\
+            \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 4.655
+        \end{align*}
+\end{frame}
+
+%--------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Feigenbaum Constant $\alpha$}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]
+        {logistic_feigenbaum_alphas.png}
+    \end{figure}
+\end{frame}
+
+%----------------------------------------------------
+
+\subsection{Sine Map}
+
+\begin{frame}
+        \frametitle{Sine Map: Background}
+        \begin{align*}
+            x_{n+1} &= f(x_n) \text{ , where}\\
+            f(x) &= A\text{ }sin(x) \\
+            f'(x) &= A\text{ }cos(x)
+        \end{align*}
+\end{frame}
+
+%---------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Bifurcation Plot}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]
+        {sine_bifurcation_diagram.png}
+    \end{figure}
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Lyapunov Exponents Plot}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]
+        {sine_lyapunov_exp.png}
+    \end{figure}
+\end{frame}
+
+%------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Results: Calculation of Feigenbaum Constant $\delta$}
+    Bifurcation points: $x^* = 2.261, 2.617, \dots$ \pause
+    \begin{align*}
+        \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
+        \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.470 \\
+        \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 4.627
+    \end{align*}
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Feigenbaum Constant $\alpha$}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]
+        {sine_feigenbaum_alphas.png}
+    \end{figure}
+\end{frame}
+
+%-----------------------------------------------------
+\subsection{Quadratic Map}
+
+\begin{frame}
+        \frametitle{Quadratic Map: Background}
+        \begin{align*}
+            x_{n+1} &= f(x_n) \text{ , where}\\
+            f(x) &= A - x^2 \\
+            f'(x) &= -2x
+        \end{align*}
+\end{frame}
+
+%------------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Bifurcation Diagram Plot}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]
+            {quadratic_bifurcation_diagram.png}
+        \end{figure}
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Lyapunov Exponent Plot}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]
+            {quadratic_lyapunov_exp.png}
+        \end{figure}
+\end{frame}
+
+%------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Results: Feigenbaum Constant $\delta$}
+    Bifurcation points: $x^* = 0.749, 1.249, \dots$ \pause
+    \begin{align*}
+        \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
+        \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.233 \\
+        \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 4.550
+    \end{align*}
+\end{frame}
+
+%------------------------------------------------------
+
+\begin{frame}
+        \frametitle{Results: Feigenbaum Constant $\alpha$}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]
+            {quadratic_feigenbaum_alphas.png}
+        \end{figure}
+\end{frame}
+
+%-------------------------------------------------------
 
 \end{document} 

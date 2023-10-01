@@ -30,7 +30,7 @@ def get_bifurcation_points(x0,t,arr_size,A_min,A_max,thresh,num_points_required,
 if __name__ == "__main__":
     t = 100000
     arr_size = 1024
-    mode = 2 # 0: logistic map, 1: sine map, 2: quadratic map
+    mode = 0 # 0: logistic map, 1: sine map, 2: quadratic map
     (x0,chosen_map,left,right,name) = [(0.1,logistic_map,2.99,3.57,"Logistic Map"),(0.1,sine_map,2.26,2.72,"Sine Map"),(0,quadratic_map,0.74,1.4015, "Quadratic Map")][mode]
     thresh = 1e-8
     num_points_required = 6
