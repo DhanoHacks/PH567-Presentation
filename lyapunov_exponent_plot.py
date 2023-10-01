@@ -31,7 +31,7 @@ def plot_lyapunov_exponents(A,exponents,map_name,save=False):
     plt.ylabel("Lyapunov exponent")
     plt.title(f"Lyapunov exponent for {map_name} map")
     if save:
-        plt.savefig(f"plots/{map_name}_lyapunov_exp.png",dpi=600)
+        plt.savefig(f"slides/plots/{map_name}_lyapunov_exp.png",dpi=600)
     # plt.show()
     plt.close()
 

@@ -15,7 +15,7 @@ def plot_bifurcation_diagram(A, points, name, save=False):
     plt.ylabel("Attractor")
     plt.title(f"{name} Bifurcation Diagram")
     if save:
-        plt.savefig(f"plots/{name.split(' ')[0].lower()}_bifurcation_diagram.png")
+        plt.savefig(f"slides/plots/{name.split(' ')[0].lower()}_bifurcation_diagram.png")
     # plt.show()
     plt.close()
 

@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{The Theory}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{What is Universality?}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{The Tools}{4}{0}{1}
+\beamer@sectionintoc {2}{Universality in One Dimensional Maps}{20}{0}{2}
+\beamer@subsectionintoc {2}{1}{Feigenbaum's Discovery}{20}{0}{2}
+\beamer@subsectionintoc {2}{2}{Logistic Map}{32}{0}{2}
