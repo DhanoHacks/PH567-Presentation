@@ -1,1 +1,4 @@
 __pycache__
+slides/presentation*
+!slides/presentation.pdf
+!slides/presentation.tex

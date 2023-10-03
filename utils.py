@@ -8,9 +8,14 @@ def logistic_map_derivative(x,A):
     return A[:,np.newaxis]*(1-2*x)
 
 def quadratic_map(x,A):
-    return A-x*x
+    return 1-A*x*x
 def quadratic_map_derivative(x,A):
-    return -2*x
+    return -2*A[:,np.newaxis]*x
+
+def biquadratic_map(x,A):
+    return 1-A*x**4
+def biquadratic_map_derivative(x,A):
+    return -4*A[:,np.newaxis]*x**3
 
 def sine_map(x,A):
     return A*np.sin(x)
@@ -36,16 +41,12 @@ def calculate_periods(asymptotic_trajectory,A):
     f, Pxx_den = signal.periodogram(asymptotic_trajectory,fs=1,axis=1,return_onesided=False)
     periods = []
     for i in range(len(A)):
-        peaks,_ = signal.find_peaks(np.log10(Pxx_den[i,:]),height=-9)
+        peaks,_ = signal.find_peaks(np.log10(Pxx_den[i,:]),height=-10)
         peaks = f[peaks]
         if len(peaks) == 0:
             T = 1
         else:
             T = round(1/min(abs(peaks)))
-        # if T==33:
-        #     print(A)
-        #     plt.plot(f,np.log(Pxx_den[i,:]))
-        #     plt.show()
         periods.append(T)
         if i==0:
             points = np.vstack((np.repeat(A[i],T),asymptotic_trajectory[i,:T]))

@@ -7,14 +7,20 @@
 \graphicspath{{plots/}{images/}} % Specifies where to look for included images (trailing slash required)
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
 \usetheme{Madrid} % A good all-around theme
-\usefonttheme{default} % Typeset using the default sans serif font
-\usepackage{palatino} % Use the Palatino font for serif text
-\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+% \usefonttheme{default} % Typeset using the default sans serif font
+% \usepackage{palatino} % Use the Palatino font for serif text
+% \usepackage[default]{opensans} % Use the Open Sans font for sans serif text
 \useinnertheme{circles}
 \title[Universality]{10K Feet View of Universality} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+\subtitle{PH 567 Presentation}
 \author[Aditya \and Dhano \and Sapna]{Aditya Mehta \and Dhananjay Raman \and Sapna} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
-\institute[IITB]{Indian Institute of Technology, Bombay} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
-\date[October 4, 2023]{PH 567 Presentation \\ October 4, 2023} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+\institute[IITB]{
+    \begin{figure}
+        \includegraphics[width=0.12\linewidth]{iitblogoclr.png}
+    \end{figure}
+    Indian Institute of Technology, Bombay
+    } % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+\date[Oct 4, 2023]{October 4, 2023} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -31,13 +37,6 @@
 
 % The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
 
-\begin{frame}
-	\frametitle{Today's Topics} % Slide title, remove this command for no title
-	
-	\tableofcontents % Output the table of contents (all sections on one slide)
-	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
-\end{frame}
-
 %----------------------------------------------------------------------------------------
 %	PRESENTATION BODY SLIDES
 %----------------------------------------------------------------------------------------
@@ -47,6 +46,7 @@
 %------------------------------------------------
 
 \subsection{What is Universality?}
+\frame{\frametitle{Today's Topics}\tableofcontents[currentsubsection]}
 
 \begin{frame}
 	\frametitle{What is Universality?}
@@ -62,6 +62,7 @@
 %------------------------------------------------
 
 \subsection{The Tools}
+\frame{\frametitle{Today's Topics}\tableofcontents[currentsection]}
 
 \begin{frame}
 	\frametitle{The Tools}
@@ -79,9 +80,13 @@
 \begin{frame}
 	\frametitle{Bifurcation Points}
     \begin{itemize}
-        \item A bifurcation point is a point in the parameter space of a system at which a bifurcation occurs. \pause
-        \item At a bifurcation point, a small change of the parameter value of the system may cause a large change in the number or stability (or structural form) of the equilibrium points of the system, or the emergence of limit cycles (oscillations), tori (higher-dimensional analogs of limit cycles), or chaos from an attracting orbit. \pause
-        \item The bifurcation point itself does not represent any dynamical change of the system, but rather a \textcolor{red}{qualitative} change of its \textcolor{blue}{behavior} as one or more parameters crosses a \textcolor{teal}{critical threshold}.
+        \item At a bifurcation point, a small change of the parameter value of the system may cause:
+        \begin{itemize}
+            \item a large change in the number or stability of the equilibrium points of the system,
+            \item the emergence of limit cycles (oscillations),
+            \item or chaos to emerge from an attracting orbit
+        \end{itemize} \pause
+        \item The bifurcation point itself does not represent any dynamical change of the system, but rather a \textcolor{red}{qualitative} change of its behavior as one or more parameters crosses a critical threshold.
     \end{itemize}
 \end{frame}
 
@@ -91,7 +96,7 @@
 	\frametitle{Bifurcation Diagram}
     \begin{itemize}
         \item A bifurcation diagram shows the values visited or approached asymptotically (fixed points, periodic orbits, or chaotic attractors) of a system as a function of a bifurcation parameter in the system. \pause
-        \item For a one dimensional map the bifurcation parameter r is shown on the horizontal axis of the plot and the vertical axis shows the set of values of the logistic function visited asymptotically from almost all initial conditions.
+        \item For a one dimensional map the bifurcation parameter is shown on the horizontal axis of the plot and the vertical axis shows the set of values of the iterated function visited asymptotically from some initial condition.
     \end{itemize}
 \end{frame}
 
@@ -115,7 +120,7 @@
             \delta_n = \delta_0 e^{\lambda n}
         \end{equation}
         where $\lambda$ is the Lyapunov exponent and $n$ is the number of iterations. \pause
-        \item The Lyapunov exponent is \textcolor{red}{positive} for chaotic systems, \textcolor{blue}{zero} for non-chaotic systems, and \textcolor{teal}{negative} for systems that converge to fixed points.
+        \item The Lyapunov exponent is \textcolor{red}{positive} for chaotic systems, \textcolor{blue}{zero} for non-chaotic systems (or bifurcation points), and \textcolor{teal}{negative} for systems that converge to fixed points.
     \end{itemize}
 \end{frame}
 
