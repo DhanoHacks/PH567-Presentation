@@ -48,8 +48,4 @@ def calculate_periods(asymptotic_trajectory,A):
         else:
             T = round(1/min(abs(peaks)))
         periods.append(T)
-        if i==0:
-            points = np.vstack((np.repeat(A[i],T),asymptotic_trajectory[i,:T]))
-        else:
-            points = np.hstack((points, np.vstack((np.repeat(A[i],T),asymptotic_trajectory[i,:T]))))
-    return points, np.array(periods)
+    return np.array(periods)

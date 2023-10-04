@@ -3,6 +3,8 @@
 	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
 	aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
 ]{beamer}
+\usepackage[style=verbose,backend=biber]{biblatex}
+\addbibresource{references.bib}
 
 \graphicspath{{plots/}{images/}} % Specifies where to look for included images (trailing slash required)
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
@@ -44,23 +46,6 @@
 \section{The Theory} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
 
 %------------------------------------------------
-\subsection{Objectives of this Talk}
-
-\frame{\frametitle{Objectives of This Talk}\tableofcontents[subsectionstyle=show/shaded]}
-
-\begin{frame}
-    \frametitle{Objectives of this Talk}
-The goal of this talk is to discuss:
-    \begin{center}
-        \item \textbf{\large{What is Universality?}}
-        \item \textbf{\large{Universality of Feigenbaum Constants}} 
-    \end{center}
-    \vspace{7mm}
-and to answer an important question:
-    \begin{center}
-        \item \textbf{\large{Is Feigenbaum constant the same for all 1D Maps?}}
-    \end{center}
-\end{frame}
 
 \subsection{What is Universality?}
 \frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
@@ -70,8 +55,7 @@ and to answer an important question:
 	
 	\begin{itemize}
         \item Universality is the observation that there are properties for a large class of systems that are independent of the dynamical details of the system \pause
-        \item All gases behave similarly at high temperature and low pressure regardless of the type of molecule \pause
-        \item Critical exponents show universality in wide range of systems, including ferro-magnets, fluids, superconductors
+        \item For eg: All gases behave similarly at high temperature and low pressure regardless of the type of molecule
     \end{itemize}
 
 \end{frame}
@@ -83,11 +67,11 @@ and to answer an important question:
 
 \begin{frame}
 	\frametitle{The Tools}
-	There are a few properties that we can use to compare and contrast between different systems: \pause
+	There are a few properties that we can use to compare and contrast between different (one-dimensional) systems: \pause
     \begin{itemize}
-        \item Bifurcation Points \pause
-        \item Bifurcation Diagrams \pause
-        \item Lyapunov Exponents
+        \item Bifurcation Diagram \pause
+        \item Lyapunov Exponents \pause
+        \item Feigenbaum Constants
     \end{itemize}
 
 \end{frame}
@@ -113,7 +97,7 @@ and to answer an important question:
 	\frametitle{Bifurcation Diagram}
     \begin{itemize}
         \item A bifurcation diagram shows the values visited or approached asymptotically (fixed points, periodic orbits, or chaotic attractors) of a system as a function of a bifurcation parameter in the system. \pause
-        \item For a one dimensional map the bifurcation parameter is shown on the horizontal axis of the plot and the vertical axis shows the set of values of the iterated function visited asymptotically from some initial condition.
+        \item For a one dimensional map the bifurcation parameter is shown on the horizontal axis of the plot and the vertical axis shows the set of values of the iterated function visits asymptotically from some initial condition.
     \end{itemize}
 \end{frame}
 
@@ -166,18 +150,12 @@ and to answer an important question:
 
 %------------------------------------------------
 
-\section{Universality in One Dimensional Maps}
 \subsection{Feigenbaum's Discovery}
 \frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
 
 \begin{frame}
 	\frametitle{Feigenbaum's Discovery}
-	While developing a quantitative description of        period doubling in logistic map, Feigenbaum  
-        realised: 
-	\begin{itemize}
-        \item  Precise functional form did not matter \pause
-        \item The map {\color{red}$F(x) = a\text{ }sin(\pi x)$} gave similar sequence of period doubling bifurcations \pause
-    \end{itemize}
+	While developing a quantitative description of period doubling in logistic map, Feigenbaum realised that the precise functional form did not matter. \pause
 
     \begin{figure}
 		\includegraphics[width=0.15\linewidth]{feigenbaum.jpg}
@@ -189,41 +167,44 @@ and to answer an important question:
 %------------------------------------------------
 
 \begin{frame}
-	\frametitle{Feigenbaum's Discovery}
-	
-	\begin{itemize}
-        \item  The values of the control parameter a at which each period-doubling bifurcation occurs are different \pause
-        \item The ratios of the changes in the control parameter decreased at the same geometrical rates $\delta$ as the logistic map. \pause
-        \item Separation between stable daughter cycles decreased at same geometrical rate as $\alpha$ for logistic map \pause
-        \item {\color{red} This observation ultimately led to a rigorous proof, using the mathematical methods of the renormalization group borrowed from the theory of critical phenomena, that these geometrical ratios were universal numbers that would apply to the quantitative description of any period-doubling sequence generated by nonlinear maps with a single quadratic extremum.} Not important \pause
-        \item The logistic map and the sine map are just two examples of this large universality class. The great significance of this result is that the global details of the dynamical system do not matter.
+    \frametitle{Feigenbaum's Discovery}
+    For a large family of Nonlinear Dynamic Systems (which includes the Logistic Map):
+    \begin{itemize}
+        \item The difference between the bifurcation points decreased at the same geometric rate $\delta$ \pause
+        \item Separation between stable daughter cycles decreased at same geometric rate $\alpha$ \pause
+        %\item {\color{red} This observation ultimately led to a rigorous proof, using the mathematical methods of the renormalization group borrowed from the theory of critical phenomena, that these geometrical ratios were universal numbers that would apply to the quantitative description of any period-doubling sequence generated by nonlinear maps with a single quadratic extremum.} Not important \pause
+        %\item The logistic map and the sine map are just two examples of this large universality class. The great significance of this result is that the global details of the dynamical system do not matter.
+        %\item In fact, this universality class extends beyond one-dimensional maps to nonlinear dynamical systems described by more realistic physical models corresponding to two-dimensional maps, systems of ordinary differential equations, and even partial differential equations.
     \end{itemize}
+    A thorough understanding of the simple Logistic Map is sufficient for describing both qualitatively, and to a large extent, quantitatively, the period-doubling route to chaos for all systems in the family.
 
-\end{frame}
+\end{frame}   
 
 %------------------------------------------------
 
 \begin{frame}
-	\frametitle{Feigenbaum's Discovery}
-	
-	\begin{itemize}
-        \item A thorough understanding of the simple logistic map is sufficient for describing both qualitatively and, to a large extent, quantitatively the period-doubling route to chaos in a wide variety of nonlinear dynamical systems. \pause
-        \item In fact, this universality class extends beyond one-dimensional maps to nonlinear dynamical systems described by more realistic physical models corresponding to two-dimensional maps, systems of ordinary differential equations, and even partial differential equations.
-    \end{itemize}
-
+	\frametitle{Feigenbaum's Constants Visualized}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]{plots/feigenbaum_constants_example.png}
+    \end{figure}
 \end{frame}
 
 %------------------------------------------------
+
+\section{Universality in One Dimensional Maps}
+\subsection{Overview}
+\frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
 
 \begin{frame}
 	\frametitle{Overview}
 
-    We will look at three different one dimensional maps: \pause
+    We will look at four different one dimensional maps: \pause
 
     \begin{itemize}
         \item Logistic Map \pause
         \item Sine Map \pause
-        \item Quadratic Map
+        \item Quadratic Map \pause
+        \item Biquadratic Map
     \end{itemize}
 
 \end{frame}
@@ -238,8 +219,8 @@ and to answer an important question:
     
         \begin{itemize}
             \item The logistic map is a polynomial mapping (equivalently, recurrence relation) of degree 2, often cited as an archetypal example of how complex, chaotic behaviour can arise from very simple non-linear dynamical equations. \pause
-            \item The map was popularized in a seminal 1976 paper by the biologist Robert May, in part as a discrete-time demographic model analogous to the logistic equation first created by Pierre François Verhulst. \pause
-            \item The logistic map is written
+            \item It was popularized by the biologist Robert May as a discrete-time demographic model. \pause
+            \item The logistic map is written as
             \begin{equation}
                 x_{n+1} = Ax_n(1-x_n)
             \end{equation}
@@ -269,8 +250,8 @@ and to answer an important question:
 %-------------------------------------------------
 
 \begin{frame}
-        \frametitle{Logistic Map: Calculation of Feigenbaum Constant $\delta$}
-        Bifurcation points: $x^* = 3, 3.449, 3.544, \dots$ \pause
+      \frametitle{Logistic Map: Calculation of Feigenbaum Constant $\delta$}
+       Bifurcation points: $x^* = 3, 3.449, 3.544, \dots$ \pause
         \begin{align*}
             \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
             \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.751 \\
@@ -312,18 +293,6 @@ and to answer an important question:
     \end{figure}
 \end{frame}
 
-%------------------------------------------------------
-
-\begin{frame}
-    \frametitle{Results: Calculation of Feigenbaum Constant $\delta$}
-    Bifurcation points: $x^* = 2.261, 2.617, \dots$ \pause
-    \begin{align*}
-        \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
-        \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.470 \\
-        \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 4.627
-    \end{align*}
-\end{frame}
-
 %-----------------------------------------------------
 
 \subsection{Quadratic Map}
@@ -333,8 +302,8 @@ and to answer an important question:
         \frametitle{Quadratic Map: Background}
         \begin{align*}
             x_{n+1} &= f(x_n) \text{ , where}\\
-            f(x) &= A - x^2 \\
-            f'(x) &= -2x
+            f(x) &= 1 - Ax^2 \\
+            f'(x) &= -2Ax
         \end{align*}
 \end{frame}
 
@@ -358,20 +327,40 @@ and to answer an important question:
         \end{figure}
 \end{frame}
 
-%------------------------------------------------------
+%-------------------------------------------------------
 
 \begin{frame}
-    \frametitle{Results: Feigenbaum Constant $\delta$}
-    Bifurcation points: $x^* = 0.749, 1.249, \dots$ \pause
-    \begin{align*}
-        \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
-        \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} = 4.233 \\
-        \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 4.550
-    \end{align*}
+        \frametitle{Comparison: Feigenbaum Constant $\delta$}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]
+            {feigenbaum_deltas_first_three.png}
+        \end{figure}
 \end{frame}
 
 %-------------------------------------------------------
 
+\begin{frame}
+        \frametitle{Comparison: Feigenbaum Constant $\alpha$}
+        \begin{figure}
+            \includegraphics[width=0.6\linewidth]
+            {feigenbaum_alphas_first_three.png}
+        \end{figure}
+\end{frame}
+
+%-------------------------------------------------------
+
+\subsection{A Quick Question...}
+\frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
+
+\begin{frame}
+        \frametitle{A Quick Question...}
+        \begin{center}
+            \item \textbf{\large{Is everyone convinced that Feigenbaum constants are universal?}} \pause
+            \item \textbf{\large{Let's try another example!}}
+        \end{center}
+\end{frame}
+
+%-------------------------------------------------------
 \subsection{Bi-Quadratic Map}
 \frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
 
@@ -379,8 +368,8 @@ and to answer an important question:
         \frametitle{Bi-Quadratic Map: Background}
         \begin{align*}
             x_{n+1} &= f(x_n) \text{ , where}\\
-            f(x) &=  \\
-            f'(x) &= 
+            f(x) &= 1 - Ax^4 \\
+            f'(x) &= -4Ax^3
         \end{align*}
 \end{frame}
 
@@ -407,32 +396,7 @@ and to answer an important question:
 %------------------------------------------------------
 
 \begin{frame}
-    \frametitle{Results: Feigenbaum Constant $\delta$}
-    Bifurcation points: $x^* = $ \pause
-    \begin{align*}
-        \delta_{n} &= \frac{A_{n}-A_{n-1}}{A_{n+1}-A_{n}} \\
-        \delta_{2} &= \frac{A_{2}-A_{1}}{A_{3}-A_{2}} =  \\
-        \delta_{3} &= \frac{A_{3}-A_{2}}{A_{4}-A_{3}} = 
-    \end{align*}
-\end{frame}
-
-%-------------------------------------------------------
-
-\begin{frame}
-        \frametitle{Ambiguity?}
-        \begin{center}
-        \item \textbf{\large{Why is this constant different from the Feigenbaum constant?}} \pause
-        \item Because the degree of equation is different
-        \item \textbf{\large{Is it still Feigenbaum constant?}} \pause
-        \item Yes, but for a different degree of function
-        \end{center}
-
-\end{frame}
-
-%------------------------------------------------------
-
-\begin{frame}
-        \frametitle{Comparing $\delta$: Bi-Quadratic Map v/s Single Maxima Maps}
+        \frametitle{Comparing $\delta$: Bi-Quadratic Map v/s Quadratic Maps}
         \begin{figure}
             \includegraphics[width=0.6\linewidth]
             {feigenbaum_deltas.png}
@@ -442,11 +406,24 @@ and to answer an important question:
 %--------------------------------------------------------
 
 \begin{frame}
-        \frametitle{Comparing $\alpha$: Bi-Quadratic Map v/s Single Maxima Maps}
+        \frametitle{Comparing $\alpha$: Bi-Quadratic Map v/s Quadratic Maps}
         \begin{figure}
             \includegraphics[width=0.6\linewidth]
             {feigenbaum_alphas.png}
         \end{figure}
+\end{frame}
+
+%-------------------------------------------------------
+
+\begin{frame}
+        \frametitle{Ambiguity?}
+        \begin{center}
+        \item \textbf{\large{Why is this constant different from the Feigenbaum constant?}} \pause
+        \item Because the degree of equation is different!
+        \item \textbf{\large{Is it still the Feigenbaum constant?}} \pause
+        \item Yes, but for a different family of functions!
+        \end{center}
+
 \end{frame}
 
 %------------------------------------------------------
@@ -454,15 +431,41 @@ and to answer an important question:
 \begin{frame}
         \frametitle{General Case}
         \begin{align*}
-            x_{n+1} = 1 - \mu |x_{n}|^{n} \text{, where $\mu > 0$}
+            x_{n+1} = 1 - A |x_{n}|^{r} \text{, where $\mu > 0$}
         \end{align*}
-        Then the Feigenbuam constants for different values of r are:
+        Then the Feigenbuam constants for different values of r \footfullcite{briggs:1991} are:
         \begin{figure}
             \includegraphics[width=0.4\linewidth]
             {feigenbaum_for_different_r.png}
         \end{figure}
         \vspace{-5mm}
-        Reference: \url{https://mathworld.wolfram.com/FeigenbaumConstant.html}
+        \setbeamerfont{footnote}{size=\tiny}
+\end{frame}
+
+%--------------------------------------------------------
+\section{Summary and Conclusion}
+\frame{\frametitle{Today's Topics}\tableofcontents[subsectionstyle=show/shaded]}
+
+\begin{frame}
+        \frametitle{Summary and Conclusion}
+        \begin{itemize}
+        \item Feigenbaum studied one dimensional maps and defined two constants $\delta$ and $\alpha$ related to the period doubling route to chaos
+        \item Two systems belonging to the same family share the same Feigenbaum Constants
+        \item There are also systems which do not share these constants; they belong to different families
+        \end{itemize}
+\end{frame}
+
+%--------------------------------------------------------
+
+\begin{frame}
+        \frametitle{Summary and Conclusion}
+        Period doubling routes to chaos are observed in many real-world systems:
+        \begin{itemize}
+            \item Convection currents in Liquid Mercury \footfullcite{libchaber:1982}
+            \item Chemical Oscillators \footfullcite{doona:1994}
+            \item Lasers \footfullcite{tarroja:1991}
+        \end{itemize}
+        Knowing about the properties which these vastly different systems share brings us one step closer to having a theory of everything :).
 \end{frame}
 
 %--------------------------------------------------------
